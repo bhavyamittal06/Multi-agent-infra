@@ -98,6 +98,19 @@ def chat_json(system: str, user: str) -> dict[str, Any]:
                 "https://ai.google.dev/gemini-api/docs/rate-limits — "
                 f"current model was {model_name!r}."
             ) from exc
+        if exc.code == 403:
+            msg = str(exc.message or exc).lower()
+            if "leaked" in msg or "permission_denied" in msg:
+                raise RuntimeError(
+                    "Gemini returned 403: this API key was disabled as leaked or is not allowed. "
+                    "Create a new key at https://aistudio.google.com/apikey , put it in .env as "
+                    "GOOGLE_API_KEY=... (do not share or commit it), and delete any old key that was exposed."
+                ) from exc
+            raise RuntimeError(
+                "Gemini returned 403 PERMISSION_DENIED. Check that GOOGLE_API_KEY is correct, "
+                "the Generative Language API is enabled for your project, and billing/API restrictions "
+                "allow this key."
+            ) from exc
         raise
     raw = (response.text or "").strip() or "{}"
     return json.loads(raw)
