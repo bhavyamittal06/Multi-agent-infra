@@ -1,0 +1,59 @@
+{
+  "runs": [
+    {
+      "case_id": "normal_demo",
+      "severity": "normal",
+      "patient_assessment": {
+        "severity": "normal",
+        "summary": "Patient has a mild sore throat without other concerning symptoms.",
+        "red_flags": [],
+        "suggested_route": "primary care"
+      },
+      "doctor_consult": null,
+      "routing_note": "No physician agent consult required; use patient assessment for routine guidance.",
+      "stored_at": "2026-05-10T20:13:54.274590+00:00"
+    },
+    {
+      "case_id": "critical_demo",
+      "severity": "critical",
+      "patient_assessment": {
+        "severity": "critical",
+        "summary": "Patient has sudden crushing chest pain radiating to the left arm with shortness of breath and clammy skin.",
+        "red_flags": [
+          "sudden crushing chest pain",
+          "radiating pain",
+          "shortness of breath",
+          "clammy skin"
+        ],
+        "suggested_route": "emergency"
+      },
+      "doctor_consult": {
+        "recommendation": "Obtain a 12-lead ECG immediately and administer aspirin and nitroglycerin if no contraindications. Continuous cardiac monitoring and IV access are essential. Rule out acute myocardial infarction and other life-threatening causes of chest pain.",
+        "escalation": "Emergency Department now.",
+        "disclaimers": "This is triage support only and not a substitute for in-person evaluation."
+      },
+      "routing_note": "Physician agent consulted for borderline or critical presentation.",
+      "stored_at": "2026-05-10T20:13:57.852583+00:00"
+    },
+    {
+      "case_id": "borderline_demo",
+      "severity": "borderline",
+      "patient_assessment": {
+        "severity": "borderline",
+        "summary": "Patient has fever, headache, and neck stiffness.",
+        "red_flags": [
+          "neck stiffness",
+          "fever"
+        ],
+        "suggested_route": "urgent care"
+      },
+      "doctor_consult": {
+        "recommendation": "Obtain vital signs, including temperature and neurological exam. Rule out meningitis and encephalitis given fever and neck stiffness. Administer antipyretics for fever and pain control.",
+        "escalation": "Emergency Department now",
+        "disclaimers": "This is triage support only and not a substitute for in-person evaluation."
+      },
+      "routing_note": "Physician agent consulted for borderline or critical presentation.",
+      "stored_at": "2026-05-10T20:14:00.629143+00:00"
+    }
+  ]
+}
