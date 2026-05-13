@@ -129,6 +129,12 @@ Get a free key at [aistudio.google.com](https://aistudio.google.com)
 python main.py
 ```
 
+### 6. Run Web UI
+```bash
+uvicorn app:app --reload
+```
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
 ---
 
 ## Sample Output

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Multi-Agent Triage</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <h1>Hospital Multi-Agent Triage Console</h1>
+        <p>
+          Patient Agent evaluates symptoms first. Doctor Agent joins automatically
+          for borderline and critical cases.
+        </p>
+      </header>
+
+      <section class="panel form-panel">
+        <form id="triage-form">
+          <label for="case_id">Case ID (optional)</label>
+          <input id="case_id" name="case_id" type="text" placeholder="e.g. OPD-12345" />
+
+          <label for="symptoms">Patient Symptoms</label>
+          <textarea
+            id="symptoms"
+            name="symptoms"
+            rows="7"
+            placeholder="Describe symptoms, duration, and major warning signs..."
+            required
+          ></textarea>
+
+          <button id="submit-btn" type="submit">Run Agent Collaboration</button>
+        </form>
+      </section>
+
+      <section id="status" class="status hidden"></section>
+
+      <section id="result-panel" class="panel hidden">
+        <div class="result-header">
+          <h2>Triage Result</h2>
+          <span id="severity-badge" class="badge">unknown</span>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Case Summary</h3>
+            <p><strong>Case ID:</strong> <span id="case-id-value"></span></p>
+            <p><strong>Routing:</strong> <span id="routing-note"></span></p>
+            <p><strong>Final Recommendation:</strong></p>
+            <p id="recommendation" class="multiline"></p>
+          </article>
+
+          <article class="card">
+            <h3>Patient Agent Output</h3>
+            <pre id="patient-assessment"></pre>
+          </article>
+
+          <article class="card">
+            <h3>Doctor Agent Output</h3>
+            <pre id="doctor-consult"></pre>
+          </article>
+
+          <article class="card">
+            <h3>Agent Audit Trail</h3>
+            <ul id="audit-log"></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

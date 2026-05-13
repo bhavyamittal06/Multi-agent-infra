@@ -1,0 +1,168 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #121a31;
+  --panel-border: #263055;
+  --text: #e8edff;
+  --subtext: #a9b5e5;
+  --accent: #5a8cff;
+  --success: #2ccf8f;
+  --warn: #f6b44f;
+  --critical: #ff627a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #121937, var(--bg) 42%);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+}
+
+.hero h1 {
+  margin-bottom: 6px;
+}
+
+.hero p {
+  margin-top: 0;
+  color: var(--subtext);
+}
+
+.panel {
+  background: linear-gradient(160deg, rgba(34, 45, 83, 0.45), rgba(18, 26, 49, 0.9));
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #2e3b67;
+  background: #0f1630;
+  color: var(--text);
+  font-size: 15px;
+}
+
+input,
+textarea {
+  padding: 11px 12px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+button {
+  margin-top: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(135deg, #4d79ff, #6e9dff);
+  padding: 12px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.status {
+  margin-top: 14px;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #415087;
+  color: var(--subtext);
+  background: rgba(24, 36, 73, 0.65);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #2d3e74;
+}
+
+.badge.normal {
+  background: rgba(44, 207, 143, 0.2);
+  color: #9cf0ca;
+}
+
+.badge.borderline {
+  background: rgba(246, 180, 79, 0.2);
+  color: #ffd995;
+}
+
+.badge.critical {
+  background: rgba(255, 98, 122, 0.2);
+  color: #ffafbc;
+}
+
+.grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border-radius: 12px;
+  border: 1px solid #2d3965;
+  background: rgba(9, 14, 29, 0.45);
+  padding: 14px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.multiline {
+  white-space: pre-wrap;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #cad7ff;
+}
+
+#audit-log {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.hidden {
+  display: none;
+}
